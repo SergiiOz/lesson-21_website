@@ -274,6 +274,7 @@ $screen-sm: 576px;
     
 }
 
+// ICONS
 .search-icon {
     margin-left: 5px;
     width: 20px; 
@@ -297,8 +298,8 @@ $screen-sm: 576px;
         height: 100%;
         color: #ffffff;
     }
-
- 
+    
+    
     // LEFT Section
     &__section-left {
         display: flex;
@@ -306,6 +307,12 @@ $screen-sm: 576px;
         justify-content: center;
         width: 50%;
         padding-right: 15px;
+        
+        // modifier position
+        &--position-content_bottom {
+            justify-content: flex-end;
+            padding-bottom: 100px;
+        }    
     }
     
     // RIGHT Section
@@ -315,21 +322,42 @@ $screen-sm: 576px;
         justify-content: center;
         width: 50%;
         padding-left: 15px;
+        
+        // modifier position
+        &--position-content_bottom {
+            justify-content: flex-end;
+            padding-bottom: 100px;
+        }
     }
 
+    // MAIN subtitle
+    &__subtitle {
+        font-size: 20px;
+        opacity: 0.6;
+    }
+
+    
     &__title {
         margin-bottom: 50px;
         font-family: 'Aleo', serif;
         font-size: 36px;
         font-weight: 400;
 
+        &--style_secondary {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+            margin: 30px 0;
+            opacity: 0.6;
+        }
+        
         @include tablet-screen() {
             font-size: 30px;
         }
     }
     
     &__text {
-        margin-bottom: 20px;
+        margin-top: 20px;
         font-family: 'Josefin Sans', sans-serif;
         font-size: 16px;
         line-height: 26px;
@@ -337,9 +365,18 @@ $screen-sm: 576px;
         font-weight: 300;
         opacity: 0.6;
 
+        &--style_secondary {
+            letter-spacing: normal;
+        }
+        
         @include laptop-screen() {
             line-height: unset;
         }
+ 
+    }
+
+    &__button {
+        margin-top: 50px;
     }
     
     &__gallery {
@@ -348,17 +385,17 @@ $screen-sm: 576px;
         align-items: center;
     }
     
-    // MAIN section
+    // MAIN section background
     &__section {
         height: 100vh;
-    
+        
         // modifier
         &--background_img-02 {
             background-image: url('../images/image-bg-02.jpg');
             @include background-cover-norepeat();
             background-position: top left;
         }
-    
+        
         &--background_img-03 {
             background-image: url('../images/image-bg-03.jpg');
             @include background-cover-norepeat();
@@ -370,17 +407,24 @@ $screen-sm: 576px;
             @include background-cover-norepeat();
             background-position: center;
         }
-    
+        
         &--background_img-05 {
             background-image: url('../images/image-bg-05.jpg');
             @include background-cover-norepeat();
             background-position: top left;
-         }
+        }
+    }
+    
+    // modifier main content block
+    &__content-block--style_secondary {
+        font-family: 'Josefin Sans', sans-serif;
+        padding: 50px 30px;
+        background-color: rgba(0, 0, 0, 0.8); 
     }
 }
 
 
-
+// Main section gallery
 .gallery {
     &__item {
         max-width: 350px;
@@ -398,6 +442,35 @@ $screen-sm: 576px;
         margin-left: 100px;
    }
 }
+
+
+
+
+//  I'll remove code later
+// .section {
+//     display: flex;
+//     align-items: flex-end;
+//     padding-bottom: 100px;
+//     height: 100%;
+//     width: 50%;
+    
+// }
+
+// .main__section-inner--after-add-block::after{
+//     content: " ";
+//     display: block;
+//     height: 100%;
+//     width: 50%;
+// }
+
+
+// .main__section-inner--before-add-block::before {
+//     content: " ";
+//     display: block;
+//     height: 100%;
+//     width: 50%;
+// }
+
 
 
 
