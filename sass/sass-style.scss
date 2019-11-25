@@ -33,11 +33,15 @@ $screen-sm: 576px;
 }
 
 //default width for content
-.wrapper {
+.wrapper{
     max-width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
-    height: 100%;
+
+    // modifier height for header
+    &--height {
+        height: 100%;
+    }
 }
 
 
@@ -274,10 +278,12 @@ $screen-sm: 576px;
     
 }
 
+// ICONS
 .search-icon {
     margin-left: 5px;
     width: 20px; 
     height: 22px;
+    fill: #ffffff;
 }
 
 .facebook-icon {
@@ -288,17 +294,28 @@ $screen-sm: 576px;
 
 
 // MAIN
-
 .main {
     
     &__section-inner {
         display: flex;
         justify-content: space-between;
-        height: 100%;
+        min-height: 700px;
         color: #ffffff;
-    }
 
- 
+        // modifier position content left
+        &--left {
+            align-items: flex-end;
+            padding-bottom: 100px;
+          }
+
+        // modifier position content right
+        &--right {
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding-bottom: 100px;
+        }
+    }
+    
     // LEFT Section
     &__section-left {
         display: flex;
@@ -316,20 +333,47 @@ $screen-sm: 576px;
         width: 50%;
         padding-left: 15px;
     }
+    
+    &__content-block {
+        
+        // modifier main content block
+        &--style_secondary {
+            font-family: 'Josefin Sans', sans-serif;
+            padding: 50px 30px;
+            background-color: rgba(0, 0, 0, 0.8);
+            max-width: 570px; 
+            // width: 50%;
+        }
+    }
 
+    // MAIN subtitle
+    &__subtitle {
+        font-size: 20px;
+        opacity: 0.6;
+    }
+
+    
     &__title {
         margin-bottom: 50px;
         font-family: 'Aleo', serif;
         font-size: 36px;
         font-weight: 400;
 
+        &--style_secondary {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+            margin: 30px 0;
+            opacity: 0.6;
+        }
+        
         @include tablet-screen() {
             font-size: 30px;
         }
     }
     
     &__text {
-        margin-bottom: 20px;
+        margin-top: 20px;
         font-family: 'Josefin Sans', sans-serif;
         font-size: 16px;
         line-height: 26px;
@@ -337,9 +381,19 @@ $screen-sm: 576px;
         font-weight: 300;
         opacity: 0.6;
 
+        &--style_secondary {
+            letter-spacing: normal;
+        }
+        
         @include laptop-screen() {
             line-height: unset;
         }
+ 
+    }
+
+    &__button {
+        background: linear-gradient(120deg, rgba(84,116,253,1) 0%, rgba(84,153,253,1) 20%, rgba(84,116,253,1) 40%);
+        margin-top: 50px;
     }
     
     &__gallery {
@@ -348,17 +402,16 @@ $screen-sm: 576px;
         align-items: center;
     }
     
-    // MAIN section
+    // MAIN section background
     &__section {
-        height: 100vh;
-    
+       
         // modifier
         &--background_img-02 {
             background-image: url('../images/image-bg-02.jpg');
             @include background-cover-norepeat();
             background-position: top left;
         }
-    
+        
         &--background_img-03 {
             background-image: url('../images/image-bg-03.jpg');
             @include background-cover-norepeat();
@@ -370,17 +423,24 @@ $screen-sm: 576px;
             @include background-cover-norepeat();
             background-position: center;
         }
-    
+        
         &--background_img-05 {
             background-image: url('../images/image-bg-05.jpg');
             @include background-cover-norepeat();
             background-position: top left;
-         }
+        }
+
+        &--background_info-list {
+            background-image: url('../images/background-info-list.jpg');
+            @include background-cover-norepeat();
+            background-position: center;
+        }
     }
+    
 }
 
 
-
+// Main section gallery
 .gallery {
     &__item {
         max-width: 350px;
@@ -398,6 +458,29 @@ $screen-sm: 576px;
         margin-left: 100px;
    }
 }
+
+.list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Aleo', serif;
+    font-size: 36px;
+    font-weight: 400;
+    list-style-type: none;
+    color: #ffffff;
+    min-height: 336px;
+    text-align: center;
+
+
+    // &__search-icon {
+    //         fill: #5474fd;
+    //         transform: scale(3);
+    //         margin: unset;
+    // }
+
+}
+
+
 
 
 
