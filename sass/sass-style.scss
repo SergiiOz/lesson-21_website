@@ -37,7 +37,11 @@ $screen-sm: 576px;
     max-width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
-    height: 100%;
+
+    // modifier height for header
+    &--height {
+        height: 100%;
+    }
 }
 
 
@@ -279,6 +283,7 @@ $screen-sm: 576px;
     margin-left: 5px;
     width: 20px; 
     height: 22px;
+    fill: #ffffff;
 }
 
 .facebook-icon {
@@ -294,17 +299,17 @@ $screen-sm: 576px;
     &__section-inner {
         display: flex;
         justify-content: space-between;
-        height: 100%;
+        min-height: 700px;
         color: #ffffff;
 
         // modifier position content left
-        &--position-content_left-bottom {
+        &--left {
             align-items: flex-end;
             padding-bottom: 100px;
           }
 
         // modifier position content right
-        &--position-content_right-bottom {
+        &--right {
             justify-content: flex-end;
             align-items: flex-end;
             padding-bottom: 100px;
@@ -399,8 +404,7 @@ $screen-sm: 576px;
     
     // MAIN section background
     &__section {
-        height: 100vh;
-        
+       
         // modifier
         &--background_img-02 {
             background-image: url('../images/image-bg-02.jpg');
@@ -425,6 +429,12 @@ $screen-sm: 576px;
             @include background-cover-norepeat();
             background-position: top left;
         }
+
+        &--background_info-list {
+            background-image: url('../images/background-info-list.jpg');
+            @include background-cover-norepeat();
+            background-position: center;
+        }
     }
     
 }
@@ -447,6 +457,27 @@ $screen-sm: 576px;
     &__item--shift_right {
         margin-left: 100px;
    }
+}
+
+.list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Aleo', serif;
+    font-size: 36px;
+    font-weight: 400;
+    list-style-type: none;
+    color: #ffffff;
+    min-height: 336px;
+    text-align: center;
+
+
+    // &__search-icon {
+    //         fill: #5474fd;
+    //         transform: scale(3);
+    //         margin: unset;
+    // }
+
 }
 
 
